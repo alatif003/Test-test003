@@ -1,0 +1,34 @@
+<apex:page StandardController="Patient__c" recordSetVar="PatientList">
+
+    <apex:form >
+        <apex:pageBlock title="Page Block Table">
+            <apex:pageBlockTable var="apollo" value="{!patientList}" border="10" cellspacing="10" cellpadding="10">
+                <apex:column value="{!apollo.Name}" headerValue="Name of the Patient"/> <br/>
+                <apex:column value="{!apollo.Date_of_Birth__c}" headerValue="DOB"/>
+                <apex:column value="{!apollo.Address__c}" headerValue="Address"/>
+                <apex:column value="{!apollo.Father_Name__c}" headerValue="Father Name"/>
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+        
+   
+    <apex:pageBlock title="Data Block Table">
+     <apex:dataTable var="Medi" value="{!patientList}" border="10" cellspacing="10" cellpadding="10">
+                <apex:column value="{!Medi.Name}" headerValue="Name of the Patient"/>
+                <apex:column value="{!Medi.Date_of_Birth__c}" headerValue="DOB"/>
+                <apex:column value="{!Medi.Address__c}" headerValue="Address"/>
+                <apex:column value="{!Medi.Father_Name__c}" headerValue="Father Name"/>
+    </apex:dataTable>         
+    </apex:pageBlock>
+    
+     <apex:pageBlock title="Data List Table">
+     <apex:dataList var="Govt" value="{!patientList}">
+                <apex:inputText value="{!Govt.Name}"/>
+                <apex:inputText value="{!Govt.Date_of_Birth__c}"/>
+                <apex:inputText value="{!Govt.Address__c}"/>
+                <apex:inputText value="{!Govt.Father_Name__c}"/>
+    </apex:dataList>         
+    </apex:pageBlock>    
+    </apex:form>
+ 
+</apex:page>

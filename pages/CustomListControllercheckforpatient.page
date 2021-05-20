@@ -1,0 +1,23 @@
+<apex:page controller="SearchPatienscls" extensions="ext1,ext2">
+
+ <apex:form >
+ <apex:pageBlock >
+ <apex:pageblockSection >
+ 
+ <apex:pageblocksectionItem >
+ <apex:OutputText >Patient Name</apex:OutputText>
+ <apex:InputText value="{!Searchkey}" />
+ </apex:pageblocksectionItem>
+ <apex:commandButton value="Search" action="{!SearchRecords}" />
+ 
+ </apex:pageblockSection>
+ <apex:pageblockTable var="apollo" value="{!patientLIst}" >
+ <apex:column value="{!apollo.Name}" headerValue="patient Name"/>
+ <apex:Column value="{!apollo.Date_of_Birth__c}" headerValue="DOB" />
+ 
+ 
+ </apex:pageblockTable>
+ 
+ </apex:pageBlock>
+  </apex:form>
+</apex:page>

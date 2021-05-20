@@ -1,0 +1,225 @@
+<apex:page sidebar="false" showheader="false">
+<head>
+        
+<title>Chat with Customer Care</title>
+<title>...</title>
+
+</head>
+<style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #005290;
+        font-family: "Trebuchet MS", "Meiryo UI Reg", "メイリオ Reg", "MS UI Gothic Reg", "Hiragino Kaku Gothic Reg", "ヒラギノ角ゴ Pro W3 Reg", "Microsoft YaHei", 微软雅黑, "Hiragino Sans GB", "Microsoft JhengHei", 微軟正黑體, "Malgun Gothic", "맑은 고딕", Gulim, Roboto, "Segoe UI", "Helvetica Neue", Tahoma, "Arial Unicode",museo-sans-for-dell-300 ;
+    }
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #005290;
+    }
+    .uiLabel span {
+      font:20px museo-sans-for-dell-300 !important;
+</style>
+
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+           embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+        //embedded_svc.settings.disabledMinimizedText = "No Support Agent Available"
+        
+        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+        // Settings for Chat
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+            // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+        embedded_svc.init(
+            'https://dell-fed--serviced2.my.salesforce.com',
+            'https://serviced2-dell-fed.cs33.force.com/ServiceChatSupport',
+            gslbBaseURL,
+            '00D350000001NmW',
+            'Services_Chat',
+            {
+                baseLiveAgentContentURL: 'https://c.la1cx.salesforceliveagent.com/content',
+                deploymentId: '572350000004CjF',
+                buttonId: '573350000004CdM',
+                baseLiveAgentURL: 'https://d.la1cx.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'Dell_Fed_Live_Chat',
+                isOfflineSupportEnabled: true
+            }
+        );
+    };
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://dell-fed--serviced2.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    }
+    
+     else {
+        initESW('https://service.force.com');
+    }
+    function startChat() {
+
+  embedded_svc.settings.prepopulatedPrechatFields = {
+   Order Number: document.getElementById('Order Number').value,
+   Description: document.getElementById('Description').value,
+   
+  };
+ 
+  var initResult = initESW('https://service.force.com');
+  
+  document.getElementById('form').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  
+  var attrs = [];
+  
+  var bootResult = embedded_svc.bootstrapEmbeddedService(attrs);
+  
+  
+  bootResult.then((data) => {
+    var buttons = document.getElementsByTagName('button');
+    for (var i=0; i<buttons.length; i++) {
+      var b = buttons[i];
+      if (b.className.startsWith('startButton')) {
+          b.click();
+      }
+     
+          
+          /*
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('avail').style.display = 'block';
+          var buttons = document.getElementsByTagName('button');
+          for (var i=0; i<buttons.length; i++) {
+            var b = buttons[i];
+            if (b.className.indexOf('minimize') > -1) {
+              b.click();
+            }
+          }
+          */
+      }
+    }
+  });
+  
+  return false;
+}
+   </script>
+
+<style>
+.form td {
+  padding:5px;
+}
+.pageTitle {
+font:25px Trebuchet MS; font-size:1.8em;line-height: 1 em;  padding: 10px;text-align: Left;
+}
+.subtitle {
+  font: Trebuchet MS,
+}
+.small {
+  font:12px Trebuchet MS;
+  text-align:left;
+}
+.label {
+padding: 10px 0;
+}
+.content {
+  width:800px;
+}
+</style>
+<div style="background-color:#eee"><br/><br/></div>
+<div style="height:60px;background:#007cb8;width:148%;margin:-10px">
+ <a href="https://www.dell.com/content/public/error.aspx?aspxerrorpath=/templates/pagetemplates/default/category.aspx?originalURL=www.dell.com%2Fp%2F%3Fc%3Dus%26l%3Den%26s%3Ddhs%26cs%3D19" src="images/logo-wt-bl.png">
+<img src="https://1000logos.net/wp-content/uploads/2017/07/dell-symbol-768x620.jpg" style="padding-left:240px;padding-top:8px;width:50px"/>
+
+</a>
+</div>
+
+<center>
+
+<div id="form" class="content" style="padding-top:10px">
+<div class="pageTitle">Chat with Customer Care</div>
+<table class="form">
+<div style="float:right;margin-right:-30px">
+            <span style="text-decoration:underline;font: Trebuchet MS;">Hours of Operation</span><br/>
+            07:00-18:00 CST
+        </div>
+
+<tr>
+  <td class="label"></td>
+  <td><input type = "CSS"  style = "width: 400px; border: 0px ;
+      border-radius: 1px;
+    color: #006bbd 
+    height: 0px;
+    box-sizing: border-box;
+   "
+    /></td>
+  
+</tr>
+<tr>
+  <td class="label">Test</td>
+  <td><input type = "textarea" style = "
+   width: 400px; border: 1px outline: none; box-shadow: 1px solid ##cce5f1;        /* Remove default borders */
+  padding: 1px 1px;background-color: internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59)); -webkit-rtl-ordering: logical;
+    -webkit-font-smoothing: antialiased;
+  border-radius: 12px;
+    focus =  outline: thin dotted;outline-offset: -2px;color:#000;text-decoration: none;
+
+   "
+    /></td>
+  
+</tr>        
+<tr>
+  <td class="label">Order Number</td>
+  <td><input type = "css"  style = "   width: 400px;  border-color: #007db8; appearance: textfield; background-color: internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59)); -webkit-rtl-ordering: logical;
+    -webkit-font-smoothing: antialiased;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;border-top-right-radius: 0;border-top-left-radius: 0; 1px 1px 1px #888;color: #222;opacity: 1.0;padding: 1px 1px;
+   
+    outline: 0 none; border: 1px solid #CCC;    text-rendering: auto;    display: inline-block;    text-align: start;
+    
+   "/></td>
+  
+</tr>
+<tr>
+  <td class="label">Description</td>
+   <td><input type = "text" style = "width: 400px; border: 1px solid #cce5f1;border-top-right-radius: 10;border-top-left-radius: 10; 1px 1px 1px #cce5f1;color: #cce5f1;opacity: 2.0;padding: 1px 1px;"/></td>
+  
+</tr>
+
+<tr>
+  <td style="height:100px">&nbsp;</td>
+  <td><button style="background:#007cb8;color:white" onclick="return startChat()">Start Chat</button>
+  <div class="small" style="padding-top:5px">Your chat session will open in a seperate window.</div>
+  </td>
+</tr>
+</table>
+</div>
+
+<div id="loading" class="content" style="width:500px;padding-top:50px;display:none">
+<div class="pageTitle">Checking Support Agent Availability...</div>
+<div class="subtitle" style="padding-top:20px">Hold tight while we see if anyone is available.</div>
+<center>
+<img style="width:300px;padding-top:45px" src="https://marvel-b1-cdn.bc0a.com/f00000000091204/www.niceincontact.com/-/media/niceincontact/page-content/blog/2019/09/customer-service-agent.ashx?rev=e6ef2ee7dc684412bdb4d33c5e2ca17e&h=630&w=1200&la=en&hash=D2216CECD0D0E50D32FB6604A7014F7E"/>
+</center>
+</div>
+
+
+
+</center> 
+</apex:page>

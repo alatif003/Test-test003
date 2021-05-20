@@ -1,0 +1,33 @@
+<apex:page controller="customPatientInsertPage">
+  <apex:form >
+      <apex:pageBlock title="Personal Details" >
+          <apex:pageBlockSection >
+              <apex:pageBlockSectionItem >
+                  Patient Name <apex:inputText value="{!pname}"/>
+              </apex:pageBlockSectionItem>
+              
+              
+              
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Address</apex:outputText>
+                  <apex:inputText value="{!paddes}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel >Father Name</apex:outputLabel>
+                  <apex:inputText value="{!pfather}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Dob</apex:outputText>
+                  <apex:inputText value="{!pdob}"/>
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+          
+          <apex:pageBlockButtons location="bottom">
+              <apex:commandButton value="save" action="{!save}"/>
+              
+          </apex:pageBlockButtons>
+      </apex:pageBlock>    
+  </apex:form>
+</apex:page>

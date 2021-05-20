@@ -1,0 +1,33 @@
+<apex:page standardController="Patient__c">
+  <apex:form >
+      <apex:pageBlock title="Personal Details" >
+          <apex:pageBlockSection columns="3">
+              <apex:pageBlockSectionItem >
+                  Patient Name <apex:inputField value="{!Patient__c.Name}"/>
+              </apex:pageBlockSectionItem>
+              
+              
+              
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Address</apex:outputText>
+                  <apex:inputtextarea value="{!Patient__c.Address__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel >Father Name</apex:outputLabel>
+                  <apex:inputfield value="{!Patient__c.Father_Name__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Dob</apex:outputText>
+                  <apex:inputfield value="{!Patient__c.Date_of_Birth__c}"/>
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+          
+          <apex:pageBlockButtons location="bottom">
+              <apex:commandButton value="save" action="{!save}"/>
+              <apex:commandButton value="save & new"/>
+          </apex:pageBlockButtons>
+      </apex:pageBlock>    
+  </apex:form>
+</apex:page>

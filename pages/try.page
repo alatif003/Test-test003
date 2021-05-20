@@ -1,0 +1,161 @@
+<apex:page standardController="Patient__c">
+<apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+
+    <head>
+        <style type="text/css">
+            fieldset {
+                font-weight:bold;
+                width:500px;
+                height:400px;
+                }
+            legend{
+                font-size:150%
+                }   
+            label.field{
+                width:200px;
+                dispaly:block;
+                float:left;             
+                }
+            button{
+                float:right;
+                }          
+           
+        </style>
+    </head>
+       
+       <fieldset>
+        <Legend>Fioptics</Legend>
+        <Label class ="field" for="Contact Name">Contact Name</label><input type="text" name="contactname"></input>
+        <Label class ="field" for="BTN">BTN</label><input type="tel" name="BTN"></input>
+        <Label class ="field" for="Customer Email Address">Customer Email</label><input type="email" name="customeremail"></input>
+        <Label class ="field" for="House Number">House Number</label><input type="text" name="housenumber"></input>
+        <Label class ="field" for="Street Name">Street Name</label><input type="text" name="streetname"></input>
+        <Label class ="field" for="Apt/Flr">Apt/Floor/Unit</label><input type="text" name="apt/flr"></input>       
+        <Label class ="field" for="City">City</label><input type="text" name="city"></input>       
+        <Label class ="field" for="State">State</label><input type="text" name="state"></input>       
+        <Label class ="field" for="Zip_Code">Zip Code</label><input type="text" name="zip_code"></input>
+        <Label class ="field" for="Consultant Name">Consultant Name</label>
+            <Select>
+                <Option Value="--">--</Option>
+                <Option Value="Aaron Armbruster">Aaron Armbruster</Option>
+                <Option Value="Alex Yankosky">Alex Yankosky</Option>
+                <Option Value="Aliea Smith">Aliea Smith</Option>
+                <Option Value="Andrew Clim">Andrew Clim</Option>
+                <Option Value="Ashley Smith">Ashley Smith</Option>
+                <Option Value="Austin Geiman">Austin Geiman</Option>
+                <Option Value="Ben Thomas">Ben Thomas</Option>
+                <Option Value="Bettina Torres">Bettina Torres</Option>
+                <Option Value="Brad Wittrock">Brad Wittrock</Option>
+                <Option Value="Brian Coogan">Brian Coogan</Option>
+                <Option Value="Brian Henderson">Brian Henderson</Option>
+                <Option Value="Bruce Farley">Bruce Farley</Option>
+                <Option Value="Chad Smith">Chad Smith</Option>
+                <Option Value="Chris Smith">Chris Smith</Option>
+                <Option Value="Christie Fox">Christie Fox</Option>
+                <Option Value="Christopher Brown">Christopher Brown</Option>
+                <Option Value="Craig Conley">Craig Conley</Option>
+                <Option Value="Craig Cornett">Craig Cornett</Option>
+                <Option Value="Craig Foltz">Craig Foltz</Option>
+                <Option Value="Danielle Duane">Danielle Duane</Option>
+                <Option Value="David Delano">David Delano</Option>
+                <Option Value="David Michaelson">David Michaelson</Option>
+                <Option Value="David Sizemore">David Sizemore</Option>
+                <Option Value="Donna Hawkins">Donna Hawkins</Option>
+                <Option Value="Douglas DeTellem">Douglas DeTellem</Option>
+                <Option Value="Drew Walker">Drew Walker</Option>
+                <Option Value="Elbert Florence">Elbert Florence</Option>
+                <Option Value="Eric Stock">Eric Stock</Option>
+                <Option Value="Greg Gillum">Greg Gillum</Option>
+                <Option Value="James Hester">James Hester</Option>
+                <Option Value="Jason Lawrence">Jason Lawrence</Option>
+                <Option Value="Jason Macintyre">Jason Macintyre</Option>
+                <Option Value="Jason Pittinger">Jason Pittinger</Option>
+                <Option Value="Jesse Patton">Jesse Patton</Option>
+                <Option Value="Jocelyn McIntosh">Jocelyn McIntosh</Option>
+                <Option Value="Joe Birchak">Joe Birchak</Option>
+                <Option Value="Jon Greene">Jon Greene</Option>
+                <Option Value="Jonathan Vehr">Jonathan Vehr</Option>
+                <Option Value="Joseph Brunner">Joseph Brunner</Option>
+                <Option Value="Josh Correll">Josh Correll</Option>
+                <Option Value="Joshua Neal">Joshua Neal</Option>
+                <Option Value="Justin Winstel">Justin Winstel</Option>
+                <Option Value="Kayla Scott">Kayla Scott</Option>
+                <Option Value="Kelsey Shoupe">Kelsey Shoupe</Option>
+                <Option Value="Kerri McCann">Kerri McCann</Option>
+                <Option Value="Kyle Leidy">Kyle Leidy</Option>
+                <Option Value="Lauren Wilson">Lauren Wilson</Option>
+                <Option Value="Lindsey Stock">Lindsey Stock</Option>
+                <Option Value="Markus Richie">Markus Richie</Option>
+                <Option Value="Matthew Miller">Matthew Miller</Option>
+                <Option Value="Matthew Payne">Matthew Payne</Option>
+                <Option Value="Megan Franklin">Megan Franklin</Option>
+                <Option Value="Michael OBrien">Michael OBrien</Option>
+                <Option Value="Mike Crump">Mike Crump</Option>
+                <Option Value="Monica Hodapp">Monica Hodapp</Option>
+                <Option Value="Myles Hornsby">Myles Hornsby</Option>
+                <Option Value="Patrick Ebeling">Patrick Ebeling</Option>
+                <Option Value="Phillip Trotta">Phillip Trotta</Option>
+                <Option Value="Rebecca Bowman">Rebecca Bowman</Option>
+                <Option Value="Rick Kurtzer">Rick Kurtzer</Option>
+                <Option Value="Robert Hoffman">Robert Hoffman</Option>
+                <Option Value="Robert Lucas">Robert Lucas</Option>
+                <Option Value="Ryan Hartinger">Ryan Hartinger</Option>
+                <Option Value="Samantha Ramey">Samantha Ramey</Option>
+                <Option Value="Sarah Koehler">Sarah Koehler</Option>
+                <Option Value="Shondra Valletti">Shondra Valletti</Option>
+                <Option Value="Thomas Mroczka">Thomas Mroczka</Option>
+                <Option Value="Tom Miller">Tom Miller</Option>
+                <Option Value="Tyler Anderson">Tyler Anderson</Option>
+                <Option Value="Tyler Stegemiller">Tyler Stegemiller</Option>
+                <Option Value="Tyler Stolly">Tyler Stolly</Option>
+                <Option Value="William Fahnestock">William Fahnestock</Option>
+                <Option Value="William King">William King</Option>
+                <Option Value="Zach Young">Zach Young</Option>
+             </Select>
+        <br/>
+        <Label class ="field" for="Store">Store</label>
+            <Select>
+                <Option Value="--">--</Option>
+                <Option Value="Crestview Hills">Crestview Hills</Option>
+                <Option Value="Eastgate">Eastgate</Option>
+                <Option Value="Florence">Florence</Option>
+                <Option Value="Kenwood">Kenwood</Option>
+                <Option Value="Northgate">Northgate</Option>
+                <Option Value="Western Hills">Western Hills</Option>
+                <Option Value="West Chester">West Chester</Option>
+            </Select>
+        <br />
+        <Label class ="field" for="Internet Speed">Internet Speed</label>
+            <Select>
+                <Option Value="--">--</Option>
+                <Option Value="10MB">10MB</Option>
+                <Option Value="20MB">20MB</Option>
+                <Option Value="30MB">30MB</Option>
+                <Option Value="50MB">50MB</Option>
+                <Option Value="100MB">100MB</Option>
+            </Select>
+        <br />
+        <Label class="field" for="Fioptics TV">Fioptics TV</label>
+            <Select>
+                <Option Value="--">--</Option>
+                <Option Value="Preferred">Preferred</Option>
+                <Option Value="Elite">Elite</Option>
+                <Option Value="Max">Max</Option>
+            </Select>           
+        <br/>
+        <Label class="field" for="Home Phone">Home Phone</label>
+            <Select>
+                <Option Value="--">--</Option>
+                <Option Value="Home Pak Lite">Home Pak Lite</Option>
+                <Option Value="Home Pak Advantage">Home Pak Advantage</Option>
+            </Select>
+        <br/>
+        <apex:commandButton value="Submit" action="{!save}"/>
+            
+      </fieldset> 
+      </apex:form>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page >
+    <apex:form >
+    Enter Name <apex:inputText /> <br/>
+    Are you interested to work in Salesforce.com? <apex:inputCheckbox />
+    </apex:form>
+</apex:page>

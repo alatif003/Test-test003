@@ -1,0 +1,14 @@
+<apex:page standardController="Patient__c">
+
+  <apex:form title="Personal Details">
+  <apex:pageBlock >
+  <apex:pageblockSection >
+  <apex:pageblockSectionItem >
+<apex:outputText >Name</apex:outputText>
+<apex:inputField value="{!Patient__c.Name}"/>
+  </apex:pageblockSectionItem>
+   <apex:pageblockSectionItem >
+  </apex:pageblockSectionItem>  </apex:pageblockSection>
+  </apex:pageBlock>  
+  </apex:form>
+</apex:page>

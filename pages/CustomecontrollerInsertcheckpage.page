@@ -1,0 +1,34 @@
+<apex:page Controller="customInsertcheckpage">
+ <apex:form >
+ <apex:pageblock title="Personal Details">
+ <apex:pageblockSection >
+ <apex:pageblocksectionItem >
+ <apex:outputText >Name</apex:outputText>
+ <apex:inputText value="{!pname}"/>
+ </apex:pageblocksectionItem>
+ 
+ <apex:pageblocksectionItem >
+ <apex:outputText >Address</apex:outputText>
+ <apex:inputText value="{!Padd}"/>
+ </apex:pageblocksectionItem>
+ 
+ <apex:pageblockSectionItem >
+ <apex:outputText >DOB</apex:outputText>
+ <apex:InputText value="{!PDOB}"/>
+ </apex:pageblockSectionItem>
+ 
+ <apex:pageblocksectionItem >
+ <apex:outputText >FatherName</apex:outputText>
+ <apex:inputText value="{!PFname}" />
+ </apex:pageblocksectionItem>
+ </apex:pageblockSection>
+ 
+ <apex:pageblockButtons location="Bottom" >
+ <apex:commandButton value="Save" action="{!Save}"/>
+
+ 
+ </apex:pageblockButtons>
+ 
+ </apex:pageblock>
+ </apex:form>
+</apex:page>

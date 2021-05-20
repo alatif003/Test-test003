@@ -1,0 +1,28 @@
+<apex:page >
+ <apex:form >
+     <apex:pageBlock title="Create Your US Tech Lightning Solution Account">
+     <apex:pageBlockButtons >Next</apex:pageBlockButtons>
+         <apex:pageBlockSection columns="2">
+         
+             <apex:pageBlockSectionItem >
+                  First Name <apex:inputText />
+             </apex:pageBlockSectionItem>
+             
+             <apex:pageBlockSectionItem >
+                Last Name <apex:inputText />
+             </apex:pageBlockSectionItem>
+             
+             <apex:pageBlockSectionItem >
+                  Address <apex:inputTextarea /> 
+             </apex:pageBlockSectionItem> <br/>
+             
+           <apex:pageBlockSectionItem >
+                   Are you interested to work with US Tech Lightning Solutions? <apex:inputcheckbox />
+             </apex:pageBlockSectionItem> <br/>
+             
+             Password:<apex:inputsecret />
+            
+         </apex:pageBlockSection>
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

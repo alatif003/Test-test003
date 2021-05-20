@@ -1,0 +1,81 @@
+<apex:page sidebar="false" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content">
+<div class="dds__container"> 
+<!-- Stack the columns on mobile by making one full-width and the other half-width --> 
+<div class="dds__row"> 
+<div class="dds__col-12 dds__col-md-8"> 
+</div>
+<div class= "dds__col-6 dds__col-md-4"> <u> Hours of Operations </u></div>
+<div>
+
+</div> 
+</div>
+</div>
+<div class="dds__container"> 
+<!-- Stack the columns on mobile by making one full-width and the other half-width --> 
+<div class="dds__row"> 
+<div class="dds__col-12 dds__col-md-8"> 
+</div>
+<div class= "dds__col-6 dds__col-md-4"> 07:00 - 18:00 CST</div>
+<div>
+
+</div> 
+</div>
+</div>
+
+
+<!--
+<div style="float:Left;margin-Left:1400px">
+            <span style="text-decoration:underline;font: Trebuchet MS;">Hours of Operation</span><br/>
+            07:00-18:00 CST
+        </div> -->
+
+
+
+<div style="padding-top:60px;padding-left:10%;width:100%">
+   <h1>Chat with Customer Care</h1>
+   <!--<div style="padding-top:30px">
+      <h3>Tell us about the problem you're having.</h3>
+   </div>-->
+   <!--<div style="padding-top:10px">
+      <h5>We will email you a transcript of our chat today. If the chat is disconnected, we will call you back.</h5>
+   </div>-->
+
+   <div style="width:350px;padding-top:20px">
+   <form data-toggle="dds__form-validation" novalidate="false">
+      <div class="dds__form-group">
+         <label for="input-error-emailInput-validation">Company Name (optional)</label> <input type="text" class="dds__form-control" maxlength="256" name="company" id="input-error-companyInput-validation" required="true" aria-invalid="false" aria-describedby=""></input>
+         <div class="dds__invalid-feedback" id="input-error-companyInput-validationFeedback"> Please enter your company. </div> 
+      </div> 
+      <div class="dds__form-group">
+         <label for="input-error-emailInput-validation">First Name</label> <input type="text" class="dds__form-control" maxlength="256" name="firstName" id="input-error-firstNameInput-validation" required="true" aria-invalid="false" aria-describedby=""></input>
+         <div class="dds__invalid-feedback" id="input-error-firstNameInput-validationFeedback"> Please enter your first name. </div>
+      </div>
+      <div class="dds__form-group">
+         <label for="input-error-emailInput-validation">Last Name</label> <input type="email" class="dds__form-control" maxlength="256" name="email" id="input-error-emailInput-validation" required="true" aria-invalid="false" aria-describedby=""></input>
+         <div class="dds__invalid-feedback" id="input-error-emailInput-validationFeedback"> Please enter your last name. </div>
+      </div>
+      <div class="dds__form-group">
+         <label for="input-error-emailInput-validation">Email Address</label> <input type="email" class="dds__form-control" maxlength="256" name="email" id="input-error-emailInput-validation" required="true" aria-invalid="false" aria-describedby=""></input>
+         <div class="dds__invalid-feedback" id="input-error-emailInput-validationFeedback"> Please enter your email address. </div>
+      </div>
+      <div class="dds__form-group">
+         <label for="input-error-emailInput-validation">Phone Number</label> <input type="email" class="dds__form-control" maxlength="256" name="email" id="input-error-emailInput-validation" required="true" aria-invalid="false" aria-describedby=""></input>
+         <div class="dds__invalid-feedback" id="input-error-emailInput-validationFeedback"> Please enter your phone number. </div>
+      </div>
+      <div class="dds__form-group">
+         <label for="input-error-emailInput-validation">Issue Description<br/>(240 Character Limit)</label> <input type="email" class="dds__form-control" maxlength="256" name="email" id="input-error-emailInput-validation" required="true" aria-invalid="false" aria-describedby=""></input>
+         <div class="dds__invalid-feedback" id="input-error-emailInput-validationFeedback"> Please enter your issue description. </div>
+      </div>
+      <div id="PrimaryMiniButton" data-content="<button type=&quot;button&quot; class=&quot;dds__btn dds__btn-primary dds__btn-sm dds__text-truncate&quot;>Primary Mini Button</button>" class="rendered-container">
+         <button type="submit" class="dds__btn dds__btn-primary dds__btn-sm dds__text-truncate">Start Chat</button>
+      </div>
+   </form>
+   </div>
+</div>
+
+</apex:define>
+</apex:composition>
+</apex:page>
